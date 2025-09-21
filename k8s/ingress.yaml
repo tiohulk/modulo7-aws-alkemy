@@ -1,0 +1,32 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: microservicios-ingress
+  annotations:
+    cloudmap.amazonaws.com/namespace: "microservicios.local"
+
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /usuarios
+        pathType: Prefix
+        backend:
+          service:
+            name: usuarios
+            port:
+              number: 8080
+      - path: /pagos
+        pathType: Prefix
+        backend:
+          service:
+            name: pagos
+            port:
+              number: 8081
+      - path: /notificaciones
+        pathType: Prefix
+        backend:
+          service:
+            name: notificaciones
+            port:
+              number: 8082

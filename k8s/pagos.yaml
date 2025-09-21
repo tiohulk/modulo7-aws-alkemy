@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pagos
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pagos
+  template:
+    metadata:
+      labels:
+        app: pagos
+    spec:
+      containers:
+      - name: pagos
+        image: pagos:latest
+        ports:
+        - containerPort: 8081

@@ -1,4 +1,3 @@
-"# modulo7-aws-alkemy" 
 # Proyecto Base: Microservicios Orquestados en AWS
 
 Este proyecto contiene tres microservicios básicos:
